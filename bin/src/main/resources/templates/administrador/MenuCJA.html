@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Hunter Shop</title>
+    <link rel="shortcut icon" th:href="@{/img/logoCityHunter.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+
+<body>
+
+<header>
+    <nav th:if="${user==null}">
+        <a th:href="@{/IniciarSesion}">Iniciar Sesión</a>
+        <a th:href="@{/newUserCliente}">Registrarse</a>
+        <a th:href="@{/menuST}">Servicio Técnico</a>
+        <a th:href="@{#}">Tienda</a>
+
+    </nav>
+    <nav th:unless="${user==null}">
+        <a th:href="@{/menuST}">Servicio Técnico</a>
+        <a th:href="@{#}">Tienda</a>
+        <a th:href="@{'/cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+        <label style="color: white" th:text="${user.nombre}"></label>
+        <a   class="navbar-brand" href="#">
+            <img src="/img/avatar.png" alt="" width="50" height="45 ">
+        </a>
+
+    </nav>
+    <br>
+    <br>
+
+
+
+    <section class="textos-header">
+        <h1>CityHunter hecho para ti</h1>
+        <h2>Lo que deseas aquí lo encontrarás</h2>
+    </section>
+
+
+</header>
+
+<main>
+    <section class="contenedor sobre-nosotros">
+        <h2 class="titulo">Nuestros productos</h2>
+        <div class="contenedor-sobre-nosotros">
+            <img src="img/OnePunch.png" alt="" style="height: 280px; width: 270px" class="imagen-about-us">
+            <div class="contenido-textos">
+                <h3><span>1</span> Nuestros productos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eum quos quasi natus, consectetur
+                    quisquam eligendi commodi dignissimos. Laudantium, dignissimos! Qui esse veritatis, delectus
+                    alias dignissimos consequatur nobis laboriosam dolorem.</p>
+                <h3><span>2</span> Nuestros servicios</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eum quos quasi natus, consectetur
+                    quisquam eligendi commodi dignissimos. Laudantium, dignissimos! Qui esse veritatis, delectus
+                    alias dignissimos consequatur nobis laboriosam dolorem.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portafolio">
+        <div class="contenedor">
+            <h2 class="titulo">Nuestras categorias</h2>
+            <div class="galeria-port">
+                <div class="imagen-port">
+                    <img src="img/port1.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port2.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port3.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port4.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port5.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port6.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port7.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/port8.jpg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/logoCityHunter.png" alt="">
+                        <p></p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about-services">
+        <div class="contenedor">
+            <h2 class="titulo">Servicio Técnico especializado</h2>
+            <div class="servicio-cont">
+                <div class="servicio-ind">
+                    <img src="img/ilustracion1.jpg" style="height: 250px; width: 300px" alt="">
+                    <h3>Servicio correctivo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, assumenda.</p>
+                </div>
+                <div class="servicio-ind">
+                    <img src="img/ilustracion2.jpg" style="height: 250px; width: 300px" alt="">
+                    <h3>Servicio preventivo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, assumenda.</p>
+                </div>
+                <div class="servicio-ind">
+                    <img src="img/ilustracion3.jpg" style="height: 250px; width: 300px" alt="">
+                    <h3>Modeo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, assumenda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Teléfono</h4>
+            <p>+57 3138832693</p>
+        </div>
+        <div class="content-foo">
+            <h4>Email</h4>
+            <p>54844</p>
+        </div>
+        <div class="content-foo">
+            <h4>Dirección</h4>
+            <p>6545454</p>
+        </div>
+    </div>
+    <h2 class="titulo-final">&copy; CityHunterShop | Project CJA</h2>
+</footer>
+<footers>
+
+</footers>
+</body>
+
+</html>

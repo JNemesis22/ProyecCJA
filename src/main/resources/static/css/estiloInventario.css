@@ -1,0 +1,189 @@
+.todo{
+    background: #441b1b;
+
+}
+#cabeza{
+    background-color:red;
+    
+}
+ .menu img{
+    width: 180px;
+    height: 100px;
+ }
+  
+ nav ul{
+    float: right;
+    margin-right: 5%;
+ }
+ .menu ul li a{
+    margin-bottom: 10px;
+    margin-top: 0%;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    
+ }
+ nav ul li{
+
+    display: inline-block;
+    line-height: 4px ;
+    margin-left: 10px;
+    font-family: 'calairi';
+    font-size:  20px; ;
+    padding: 5px 20px;
+    margin: 5px 0;
+    
+
+ }
+ nav ul li:hover{
+    background-color: rgb(192, 185, 185);
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(202, 193, 193);
+}
+.menu-letra a{
+    font-family: 'calairi';
+    font: size 23px; ;
+    color :white;
+    text-decoration: none;
+
+}
+
+.izquierda {
+    display: block;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    border-radius: 4px;
+    
+    background-size: cover;
+     background-position: center;
+    
+     text-align: left;
+     
+  
+     
+}
+.izquierda img{
+    padding: 20px; ;
+    width: 50%;
+    height: 50%;
+   
+    margin-left: 80px;
+}
+
+.izquierda ul li{
+
+   
+    background: #9e9696;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #ce1313;
+    font-family: 'calairi';
+    list-style: none;
+    margin: 10px 2px ;
+    text-align: left;
+
+}
+.izquierda ul{
+    margin-right: 5%;
+    margin-left: -30px;
+}
+.izquierda ul li:hover{
+    width: 90%;
+    background: #b90e0e;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #d4cbcb;
+    font-family: 'calairi';
+    list-style: none;
+    margin: 10px 2px ;
+    text-align: left;
+
+}
+.izquierda p a{
+    font-family: 'calibri';
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+.izquierda h4{
+    font-family: 'calibri';
+    font-size: 20px;
+    color: red;
+    text-align: center;
+
+    
+}
+.derecha {
+    display: block;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    border-radius: 4px;
+
+    background : rgb(204, 192, 192);
+    background-size: cover;
+     text-align: center;
+     border: 3px solid black;
+     color: #000;
+}
+.derecha h4{
+   
+    font-family: 'calibri';
+    font-size: 20px;
+    color: #ce1313;
+    text-align: center;
+    
+}
+
+
+
+.izquierda ul li ul{
+    position: absolute;
+    justify-content: space-between;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: -1%;
+    color: white;
+
+
+    
+}
+.izquierda ul li ul li a{
+    text-decoration: none;
+    color: white;
+    
+}
+.izquierda ul li ul li{
+    background: #3f4041;
+    border: 3px solid red;
+    height: 10px;
+  
+}
+.izquierda ul li{
+    display: flex;
+    justify-content: space-around;
+}
+
+.izquierda ul li ul{
+    display: none;
+}
+.izquierda ul li:hover > ul{
+display: block;
+
+    }
+
+    .derecha  table{
+        padding-left: 2%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-right: 2%;
+    }
+    

@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav {
+    text-align: right;
+    padding: 30px 50px 30px 0px;
+    background: url(../img/BannerPG.png);
+    background-size: cover;
+}
+
+nav>a {
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+    background-color: red;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    padding: 5px 15px;
+}
+
+nav>a:hover {
+    text-decoration: underline;
+    background-color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.form-register {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.controls>input,
+.controls>select {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #c01c1c;
+    font-size: 15px;
+    color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Agregamos el background-color */
+    background-color: #24303c;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+}
+
+.controls>select::-ms-expand {
+    display: none;
+}
+
+.controls>select option {
+    background: #24303c;
+    color: white;
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+}
+
+.form-register a {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-register .botons {
+    width: 100%;
+    background: #c01c1c;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.form-register .botons:hover {
+    background-color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+/* footer*/
+
+footer {
+    background: #000000;
+    padding: 60px 0 30px 0;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #ffffff;
+    border-bottom: 3px solid #d32020;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p {
+    color: #ffffff;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #ffffff;
+}

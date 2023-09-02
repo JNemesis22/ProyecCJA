@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orden Pedido</title>
+
+  <link rel="stylesheet" th:href="@{/css/ordenPedido.css}">
+  <link rel="shortcut icon" th:href="@{/img/logoCityHunter.png}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body  style="background-image: url(/img/paredLadrillo.jpg);">
+
+<nav class="navbar" style="background-color: black;" >
+  <div class="container-fluid"   style="background-image: url(/img/BannerPG.png);background-size: cover ; height: 100px;">
+    <p class="navbar-brand" >
+
+    </p>
+    <div th:if="${user != null}" class="login">
+
+
+      <a class="botonMenu" th:href="@{#}">Ventas</a>
+      <a class="botonMenu" th:href="@{/listarAgenAdmin}">Servicio Tecnico</a>
+      <a class="botonMenu" th:href="@{/productos}">Inventario</a>
+
+      <a class="botonMenu" th:href="@{'cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+
+      <a th:text="${user.nombre}" style="color: white; font-family: Calibri"></a>
+
+      <a  th:href= "@{'editUser/'+${user.id}}" class="navbar-brand" href="#">
+        <img src="/img/avatar.png" alt="" width="50" height="45 ">
+
+      </a>
+
+
+    </div>
+    <div th:unless="${user != null}">
+
+    </div>
+
+
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2" >
+        <div class="izquierda">
+
+      </div>
+        </div>
+      <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8" style="background-color:#9e9696;">
+        
+       <div class="derecha">
+        <h4>Orden Pedido</h4>
+
+
+           <form th:action="@{/newDetalle}" th:object="${detalle}"  method="POST">
+             <div class="container">
+
+               <div class="row">
+                 <div  class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+
+                   <span class="input-group-text" id="inputGroup-sizing-default">Orden #: <span  th:text="${orden.id}" class="input-group-text" id="inputGroup-sizing-default"></span></span>
+
+
+
+                 </div>
+                 <div  class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+
+                     <span class="input-group-text" id="inputGroup-sizing-default">Proveedor : <span  th:text="${orden.proveedor.nombre}" class="input-group-text" id="inputGroup-sizing-default"></span></span>
+
+                 </div>
+
+
+                   <div  class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+
+
+                     <span class="input-group-text" id="inputGroup-sizing-default">Creada : <span  th:text="${orden.fechaCreacion}" class="input-group-text" id="inputGroup-sizing-default"></span></span>
+
+                   </div>
+
+             </div>
+
+             <input th:field="*{id}" type="hidden">
+
+               <input th:field="*{orden.id}" type="hidden">
+
+               <table class="table">
+                 <thead>
+                 <tr>
+
+                   <th scope="col">Producto</th>
+                   <th scope="col">Cantidad</th>
+                   <th scope="col">precio</th>
+                   <th></th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr th:each="dt:${dt}">
+                   <td ><label th:text="${dt.productos.nombre}"></label>-<label th:text="${dt.productos.genero_modelo}"></label>-<label th:text="${dt.productos.talla_capacidad}"></label>-<label th:text="${dt.productos.disenho}"></label></td>
+                   <td th:text="${dt.cantidad}"></td>
+                   <td th:text="${dt.productos.precio}"></td>
+                   <td> <a th:href="@{'elimProdDet/'+${dt.id}}" class="btn btn-danger">Quitar</a> </td>
+                 </tr>
+                 </tbody>
+               </table>
+               <div  class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+
+
+                 <span class="input-group-text" id="inputGroup-sizing-default">Total: <span  th:text="${orden.total}" class="input-group-text" id="inputGroup-sizing-default"></span></span>
+
+               </div>
+
+
+               <div class="input-group mb-2" style="margin-top: 2%">
+                 <span class="input-group-text" id="inputGroup-sizing-default">Producto</span>
+
+                 <select class="form-select"  id="inputGroupSelect01" th:field="*{productos.id}">
+                   <option  selected  th:each="producto : ${producto}" th:value="${producto.id}" ><label th:text="${producto.nombre}"></label>-<label th:text="${producto.genero_modelo}"></label>-<label th:text="${producto.talla_capacidad}"></label>-<label th:text="${producto.disenho}"></label></option>
+                 </select>
+
+
+
+               </div>
+
+
+
+
+
+
+             <div class="input-group mb-2">
+               <span class="input-group-text" id="inputGroup-sizing-default">Cantidad</span>
+               <input type="number"  min="0" th:field="*{cantidad}"class="form-control" aria-label="Sizing example input"  value="" aria-describedby="inputGroup-sizing-default" required>
+             </div>
+
+             <div class="d-grid gap-2">
+               <button class="btn btn-danger" type="submit">Agregar Producto</button>
+
+             </div>
+
+
+           </form>
+         <br>
+         <div class="d-grid gap-2">
+           <button class="btn btn-danger" type="button" id="button"> <a th:href="@{/ordenLista}"  style="text-decoration: none; color:white" >Finalizar Orden</a></button>
+
+         </div>
+
+       </div>
+      </div>
+
+    </div>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Enlace regular</a></li>
+      <li><a class="dropdown-item active" href="#" aria-current="true">Enlace activo</a></li>
+      <li><a class="dropdown-item" href="#">Otro enlace</a></li>
+    </ul>
+</body>
+
+</html>

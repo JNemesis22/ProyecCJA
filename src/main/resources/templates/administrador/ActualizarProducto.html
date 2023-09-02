@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Producto</title>
+
+  <link rel="stylesheet" href="css/Actuaizar.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body  style="background-image: url(img/paredLadrillo.jpg);">
+
+  <nav class="navbar" style="background-color: black;" >
+    <div class="container-fluid"   style="background-image: url(img/BannerPG.png);background-size: cover ; height: 100px;">
+      <a class="navbar-brand" href="ProductosInventario.html">
+        <img src="img/logoCityHunter.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        
+      </a>
+      <div class="login">
+        <a class="navbar-brand" href="#" style="color: #000;;">Cerrar Sesion</a>
+        <a class="navbar-brand" href="#">
+          <img src="img/avatar.png" alt="" width="50" height="45    ">
+        </a>
+
+      </div>
+
+
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color:black;">
+        <div class="izquierda">
+          <h4>Empleado</h4>
+          <img src="img/logoCityHunter.jpg" alt="" width="30" height="40">
+
+          <ul>
+            <li >
+              <p><a href="RegistroProductos.html" >Registrar Producto</a></p>
+            </li>
+            <li>
+              <p><a href="CrearOrden.html">Generar Orden</a></p>
+            </li>
+            <li>
+              <p><a href="Proveedores.html">Proveedores</a></p>
+            </li>
+            <li>
+              <p><a href="CategoriasIndex.html">Categorias</a></p>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8" style="background-color:#9e9696;">
+        <div class=" derecha">
+            <h4>Actualizar Producto</h4>
+           
+            <form action="" method="post">
+                
+                    
+              
+                        
+                    <div class="input-group mb-2" >
+                    
+                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+                    <select class="form-select" id="inputGroupSelect01" name="Categoria">
+                      <option value="1">Consolas</option>
+                      </select>
+                   
+
+                  </div>
+                  
+                
+                
+                   
+
+                <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    <input type="text" class="form-control"  name="nombre"aria-label="Sizing example input" value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Estado</span>
+                    <input type="text" class="form-control" name="estado" aria-label="Sizing example input"  value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Novedades</span>
+                    <input type="text" class="form-control" name="novedades" aria-label="Sizing example input"  value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Diseño</span>
+                    <input type="text" class="form-control" name="disenho" aria-label="Sizing example input"  value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Tamaño</span>
+                    <input type="text" class="form-control"name="tamanho" aria-label="Sizing example input"  value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Genero</span>
+                    <input type="text" class="form-control" name="genero" aria-label="Sizing example input"   value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">licencia</span>
+                    <input type="text" class="form-control" name="licencia" aria-label="Sizing example input"   value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
+                    <input type="number" class="form-control" name="precio" aria-label="Sizing example input"   value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Capacidad/talla</span>
+                    <input type="text" class="form-control" name="CapT" aria-label="Sizing example input"  value="" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Garantia</span>
+                    <input type="text" class="form-control" name="garantia" aria-label="Sizing example input"   value=" " aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  
+                  <div class="d-grid gap-2">
+                 
+                  <button class="btn btn-danger" type="submit">Actualizar </button>
+                   
+                  </div>
+
+                  </form>
+           
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+</body>
+
+</html>

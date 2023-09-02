@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamiento</title>
+  <link rel="shortcut icon" th:href="@{/img/logoCityHunter.png}" type="image/x-icon">
+  <link rel="stylesheet" th:href="@{/css/formSty21.css}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<nav th:if="${user==null}">
+  <a th:href="@{/IniciarSesion}">Iniciar Sesión</a>
+  <a th:href="@{/newUserCliente}">Registrarse</a>
+  <a th:href="@{/menu}">Inicio</a>
+  <a th:href="@{#}">Tienda</a>
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar...">
+    <button type="submit">Ir</button>
+  </div>
+</nav>
+<nav th:unless="${user==null}">
+
+  <a th:href="@{/menu}">Inicio</a>
+  <a th:href="@{#}">Tienda</a>
+  <a th:href="@{'/cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+  <label style="color: white" th:text="${user.nombre}"></label>
+  <a   class="navbar-brand" href="#">
+    <img src="/img/avatar.png" alt="" width="50" height="45 ">
+  </a>
+
+</nav>
+
+<form th:action="@{/saveAgendamiento}" th:object="${agendamiento}" method="POST">
+  <section class="form-register">
+    <h4>Agendamiento</h4>
+    <div class="controls">
+      <input th:field="*{id}" type="hidden" />
+      <input th:field="*{diagnostico.id}" type="hidden" /> <!-- Campo oculto para el ID del diagnóstico -->
+      <!-- Reemplazamos el input anterior por el select -->
+      <select id="confirmarDomi" th:field="*{confirmarDomi}" required>
+        <option value="">DESEA DOMICILIO</option>
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+      </select>
+      <p id="mensajeDomicilio"></p>
+
+      <!-- Utilizamos el atributo "min" para establecer la fecha mínima como la fecha actual -->
+      <input id="fechaServicio" th:field="*{fechaServicio}" type="date" required />
+
+      <!-- Utilizamos el atributo "min" para establecer la hora mínima como 9:00 am y el atributo "max" para 7:00 pm -->
+      <input id="horaServicio" th:field="*{horaServicio}" type="time" required />
+
+      <button type="submit" value="Guardar" class="botons">Registra tu orden</button>
+      <p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
+    </div>
+  </section>
+</form>
+
+<footer>
+  <div class="contenedor-footer">
+    <div class="content-foo">
+      <h4>Telefono</h4>
+      <p>+57 3138832693</p>
+    </div>
+    <div class="content-foo">
+      <h4>Email</h4>
+      <p>54844</p>
+    </div>
+    <div class="content-foo">
+      <h4>Dirección</h4>
+      <p>6545454</p>
+    </div>
+  </div>
+  <h2 class="titulo-final">&copy;CityHunterShop | Proyecto CJA</h2>
+</footer>
+
+<script>
+  // Función para mostrar el mensaje según la selección del campo "DESEA DOMICILIO"
+  document.getElementById('confirmarDomi').addEventListener('change', function() {
+    var mensaje = document.getElementById('mensajeDomicilio');
+
+    if (this.value === 'Si') {
+      mensaje.innerHTML = 'La hora y fecha serán para el domicilio.';
+    } else if (this.value === 'No') {
+      mensaje.innerHTML = 'La hora y fecha serán para entregar el equipo.';
+    } else {
+      mensaje.innerHTML = '';
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var fechaInput = document.getElementById('fechaServicio');
+    var horaInput = document.getElementById('horaServicio');
+
+    var fechaActual = new Date();
+
+    // Validamos la fecha actual
+    if (fechaActual.getDay() === 0) { // 0 es domingo
+      fechaActual.setDate(fechaActual.getDate() + 1); // Si es domingo, avanzamos un día para que sea lunes
+    }
+
+    // Establecemos la fecha mínima en el campo de fecha
+    fechaInput.min = fechaActual.toISOString().split('T')[0];
+
+    // Establecemos la hora actual y la hora máxima (7:00 pm) en el campo de hora
+    var horaActual = fechaActual.getHours() + ':' + fechaActual.getMinutes();
+    horaInput.min = '09:00';
+    horaInput.max = '19:00';
+  });
+
+</script>
+
+</body>
+
+</html>

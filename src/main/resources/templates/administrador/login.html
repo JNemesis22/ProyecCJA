@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="shortcut icon" href="/img/logoCityHunter.png" type="image/x-icono">
+    <link rel="stylesheet" th:href="@{css/styleLogin.css}">
+    <header>
+       
+        <nav >
+            <a th:href="@{/menu}">Inicio</a>
+            <a th:href="@{/newUserCliente}">Registrarse</a>
+            <a th:href="@{/menuST}">Servicio Técnico</a>
+            <a href="Tienda">Tienda</a>
+        </nav>
+    </header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login</title>
+</head>
+<body style="background-image: url(/img/DiseñoLogin.png);">
+    <section class="form-register">
+        <h4>Login City Hunter</h4>
+        <form th:action="@{/login}" method="post">
+        <input class="controls" type="text" name="Correo" id="Correo" placeholder="Ingrese su correo o Nombre de usuario">
+        <input class="controls" type="password" name="Contraseña" id="Contraseña" placeholder="Ingrese su contraseña" >
+
+            <div th:if="${mensaje==null}">
+
+            </div>
+            <div th:unless="${mensaje==null}">
+                <p th:text="${mensaje}"></p>
+            </div>
+
+        <input class="botons" type="submit" value="Iniciar Sesion">
+            <p><a th:href="@{/recuperarPassword}">¿Ovido su Contraseña?</a></p>
+
+            <p><a href="#">¿No tengo cuenta?</a></p>
+        </form>
+    </section>
+
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Telefono</h4>
+                <p>+57 3138832693</p>
+            </div>
+            <div class="content-foo">
+                <h4>email</h4>
+                <p>54844</p>
+            </div>
+            <div class="content-foo">
+                <h4>Dirrecion</h4>
+                <p>6545454</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy;CityHunterShop | Proyect CJA</h2>
+    </footer>
+</body>
+</html>
